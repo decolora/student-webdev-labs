@@ -1,24 +1,38 @@
 :root {
   --purple: #800080;
   --light-text-color: #fefefe;
+  --lavender: #e7e6f8;
+  --hover-color: #32cd32;
 }
 
 body {
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Exercise 01 - Center */
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--lavender);
+}
+
 .box {
+  display: flex;
   width: 200px;
   height: 100px;
   padding: 1rem;
-  background: var(--purple);
+  align-items: center;
   color: var(--light-text-color);
   font-size: 1.75rem;
+  background-color: var(--purple);
   text-align: center;
 }
 
 h1 {
+  margin: 0;
   text-align: center;
 }
 
@@ -39,7 +53,186 @@ h1 {
 }
 
 /* Exercise 02 - Flexbox */
+.top-of-page,
+.bottom-of-page {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  color: var(--light-text-color);
+  background-color: black;
+}
+
+.top-of-page {
+  height: 3rem;
+  justify-content: space-between;
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.navigation a {
+  padding: 0.2rem;
+  color: var(--light-text-color);
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  color: var(--hover-color);
+  border-bottom: 3px solid var(--hover-color);
+}
+
+.main-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.page-area {
+  max-width: 22rem;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.figure-image {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.figure-image img {
+  max-width: 15rem;
+  max-height: 18rem;
+  padding: 0 auto;
+}
+
+.figure-image figcaption {
+  margin-top: 1rem;
+}
+
+.bottom-of-page {
+  height: 2rem;
+  justify-content: center;
+}
 
 /* Exercise 03 - CSS Grid */
+.grid-h1 {
+  padding: 1rem;
+}
+
+.grid-container-1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(7, 6rem);
+  margin: 0.3rem;
+  gap: 0.3rem;
+}
+
+.grid-container-1 .item1,
+.item8 {
+  grid-column: span 3;
+}
+
+.grid-container-1 .item2 {
+  grid-column: span 2;
+  grid-row: 2 / 6;
+}
+
+.grid-container-1 .item3 {
+  grid-row: span 4;
+}
+
+.grid-container-1 .item6 {
+  display: none;
+}
+
+.grid-container-1 .item7 {
+  grid-column: 1;
+  grid-row: 6;
+}
 
 /* Exercise 04 - CSS Grid Areas */
+.grid-container-2 {
+  display: grid;
+  margin: 0.3rem;
+  gap: 0.4rem;
+}
+
+.grid-item {
+  border-radius: 0.3rem;
+}
+
+/* mobile layout */
+@media (max-width: 414px) {
+  .grid-container-2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(11, 1fr);
+  }
+
+  .grid-container-2 .article {
+    grid-row: 2 / 6;
+  }
+
+  .grid-container-2 .section {
+    grid-row: 6 / 10;
+  }
+}
+
+/* tablet layout */
+@media (min-width: 415px) and (max-width: 768px) {
+  .grid-container-2 {
+    grid-template-columns: 2fr;
+    grid-template-rows: repeat(7, 1fr);
+  }
+
+  .grid-container-2 .header,
+  .grid-container-2 .footer {
+    grid-column: span 3;
+  }
+
+  .grid-container-2 .article {
+    grid-row: span 3;
+    grid-column: span 2;
+  }
+
+  .grid-container-2 .aside {
+    grid-row: span 3;
+  }
+
+  .grid-container-2 .section {
+    grid-row: span 2;
+    grid-column: span 3;
+  }
+}
+
+/* laptop layout */
+@media (min-width: 769px) {
+  .grid-container-2 {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+  }
+
+  .grid-container-2 .header,
+  .grid-container-2 .footer {
+    grid-column: span 6;
+  }
+
+  .grid-container-2 .aside {
+    grid-column: 1 / 2;
+    grid-row: 2 / 5;
+  }
+
+  .grid-container-2 .article {
+    grid-column: span 4;
+    grid-row: span 3;
+  }
+
+  .grid-container-2 .section {
+    grid-column: span 6;
+    grid-row: span 2;
+  }
+}

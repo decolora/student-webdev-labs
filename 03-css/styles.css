@@ -7,6 +7,7 @@
   --dark-slate-infinity: #1f2a33;
   --platinum: #f0f0f0;
   --bright-snow: #fafafa;
+  --accent-color: #dcdcdc;
   /* form.html colors */
   --midnight-blue-shade: #161678;
   --deep-twilight: #030341;
@@ -19,8 +20,8 @@ body {
 
 #books-main {
   padding: 2rem 3rem;
-  background-color: whitesmoke;
   color: var(--dark-slate-infinity);
+  background-color: whitesmoke;
 }
 
 #books-main h1,
@@ -38,7 +39,7 @@ body {
 #books-main h2 {
   margin: 2rem 0 1.5rem 0;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid gainsboro;
+  border-bottom: 1px solid var(--accent-color);
 }
 
 .nav-bar {
@@ -88,7 +89,7 @@ body {
 
 #books-main .cover-images img {
   height: 24rem;
-  border: 1px solid gainsboro;
+  border: 1px solid var(--accent-color);
   border-radius: 5px;
   transition: transform 0.2s ease-in-out;
 }
@@ -98,7 +99,7 @@ body {
 }
 
 #books-main .pov-table {
-  border: 1px solid gainsboro;
+  border: 1px solid var(--accent-color);
   border-collapse: collapse;
   background-color: var(--platinum);
   line-height: 1.5;
@@ -107,7 +108,7 @@ body {
 #books-main .pov-table th,
 #books-main .pov-table td {
   padding: 0.5rem;
-  border: 1px solid gainsboro;
+  border: 1px solid var(--accent-color);
   text-align: center;
 }
 
@@ -122,7 +123,7 @@ body {
 /* ******************** form.html ******************** */
 
 #form-main {
-  min-height: 100vh;
+  height: 100vh;
   align-content: center;
   background-color: var(--deep-twilight);
 }
@@ -164,7 +165,7 @@ body {
   height: 1.2rem;
   margin: 0.3rem 0;
   padding: 0.5rem;
-  border: 2px solid gainsboro;
+  border: 2px solid var(--accent-color);
   border-radius: 0.3rem;
   font-size: 1rem;
 }
@@ -193,8 +194,8 @@ body {
 }
 
 #form-main .reset-btn {
-  background-color: gainsboro;
-  border: 2px solid gainsboro;
+  background-color: var(--accent-color);
+  border: 2px solid var(--accent-color);
 }
 
 #form-main .footnote {
